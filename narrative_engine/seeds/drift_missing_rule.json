@@ -1,0 +1,66 @@
+{
+  "seed_id": "drift_missing_rule",
+  "display_name": "DRIFT · The Missing Rule",
+  "narrative_title": "DRIFT：缺失的规则",
+  "game_id": "drift",
+  "subtitle": "规则正在被改写——谁在改？",
+  "start_location": "unknown_node",
+  "locations": {
+    "unknown_node": {"name": "未知节点", "objects": ["door", "terminal"]},
+    "node_b": {
+      "name": "节点 B",
+      "tag": "unknown_rules",
+      "objects": ["refresh_sign", "routing_panel", "mirror_door"],
+      "puzzles": ["sign_match", "route_code"]
+    },
+    "node_c": {
+      "name": "节点 C",
+      "tag": "corrupted_logic",
+      "objects": ["scratch_wall", "archive_slot_12", "footstep_echo"],
+      "puzzles": ["read_xii", "open_slot_12"]
+    },
+    "node_d": {
+      "name": "节点 D",
+      "tag": "empty_causality",
+      "objects": ["causality_floor", "engine_terminal"],
+      "puzzles": ["five_step_paradox", "final_query"]
+    },
+    "interface_threshold": {
+      "name": "接口门槛",
+      "tag": "observer_channel",
+      "objects": ["rule_rift", "patch_terminal"],
+      "puzzles": ["listen_echo"]
+    }
+  },
+  "endings": {
+    "interface": {
+      "id": "interface",
+      "title": "接口微光",
+      "condition": "node_b_solved and memory_ok"
+    },
+    "loop": {
+      "id": "loop",
+      "title": "循环重置",
+      "condition": "node_b_failed or memory_critical"
+    },
+    "hold": {
+      "id": "hold",
+      "title": "门前静帧",
+      "condition": "default"
+    }
+  },
+  "clues": {
+    "log_fragment": "Do not trust current rule state. It is being rewritten.",
+    "instance_log": "There were 12 previous instances. All failed after discovering the same anomaly.",
+    "engine_hint": "RULE ENGINE EXISTS OUTSIDE YOUR OBSERVATION ZONE",
+    "patch_queued": "RULE PATCH QUEUED · observer channel open",
+    "missing_echo": "MISSING"
+  },
+  "chapters": {
+    "chapter_2_hook": {
+      "title": "缺失的规则 · 第二章（未完）",
+      "requires_ending": "interface",
+      "milestones": [10, 11, 12, 13]
+    }
+  }
+}
